@@ -19,7 +19,7 @@ CREATE TABLE "category" (
 DROP TABLE IF EXISTS "item";
 CREATE TABLE "item" (
 	"code" INTEGER PRIMARY KEY NOT NULL UNIQUE, 
-	"itemname" VARCHAR NOT NULL, 
+	"itemname" VARCHAR NOT NULL UNIQUE, 
 	"category" INTEGER NOT NULL REFERENCES `category` (`cid`) ON DELETE CASCADE ON UPDATE CASCADE, 
 	"currentstock" INTEGER NOT NULL, 
 	"price" FLOAT

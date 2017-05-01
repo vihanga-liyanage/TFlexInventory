@@ -52,3 +52,59 @@ Apr 30, 2017 8:30:13 PM classes.DBConnection <init>
 INFO: ======================== Application started ========================
 Apr 30, 2017 8:30:19 PM main.LoginFrame btnSubmitActionPerformed
 INFO: Dushyantha logged in as an admin.
+May 01, 2017 8:30:56 PM classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 01, 2017 8:31:04 PM main.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 01, 2017 8:32:42 PM classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 01, 2017 8:32:50 PM main.LoginFrame btnSubmitActionPerformed
+INFO:  logged in as an admin.
+May 01, 2017 8:33:57 PM classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 01, 2017 8:34:00 PM main.LoginFrame btnSubmitActionPerformed
+INFO:  logged in as an admin.
+May 01, 2017 8:35:53 PM classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 01, 2017 8:35:56 PM main.LoginFrame btnSubmitActionPerformed
+INFO:  logged in as an admin.
+May 01, 2017 8:36:38 PM classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 01, 2017 8:36:41 PM main.LoginFrame btnSubmitActionPerformed
+INFO:  logged in as an admin.
+May 01, 2017 8:51:15 PM classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 01, 2017 8:51:18 PM main.LoginFrame btnSubmitActionPerformed
+INFO:  logged in as an admin.
+May 01, 2017 8:52:25 PM classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 01, 2017 8:52:28 PM main.LoginFrame btnSubmitActionPerformed
+INFO:  logged in as an admin.
+May 01, 2017 9:17:57 PM classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 01, 2017 9:18:01 PM main.LoginFrame btnSubmitActionPerformed
+INFO:  logged in as an admin.
+May 01, 2017 9:26:48 PM classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 01, 2017 9:26:51 PM main.LoginFrame btnSubmitActionPerformed
+INFO:  logged in as an admin.
+May 01, 2017 9:27:52 PM classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 01, 2017 9:27:55 PM main.LoginFrame btnSubmitActionPerformed
+INFO:  logged in as an admin.
+May 01, 2017 9:57:19 PM classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 01, 2017 9:57:23 PM main.LoginFrame btnSubmitActionPerformed
+INFO:  logged in as an admin.
+May 01, 2017 10:01:02 PM classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 01, 2017 10:01:09 PM main.LoginFrame btnSubmitActionPerformed
+INFO:  logged in as an admin.
+May 01, 2017 10:06:22 PM classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 01, 2017 10:06:25 PM main.LoginFrame btnSubmitActionPerformed
+INFO:  logged in as an admin.
+May 01, 2017 10:09:38 PM classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 01, 2017 10:09:42 PM main.LoginFrame btnSubmitActionPerformed
+INFO:  logged in as an admin.

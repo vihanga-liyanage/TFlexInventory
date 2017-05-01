@@ -111,10 +111,12 @@ public class AdminPannel extends javax.swing.JFrame {
         greetingsLbl = new javax.swing.JLabel();
         timeLabel = new javax.swing.JLabel();
         HeaderLbl = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        inventoryTable = new javax.swing.JTable();
         addNewDeliveryNoteBtn = new javax.swing.JButton();
         addNewStocksBtn = new javax.swing.JButton();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        inventoryTable = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -134,28 +136,6 @@ public class AdminPannel extends javax.swing.JFrame {
         HeaderLbl.setText("Welcome to TFlex Inventory System");
         HeaderLbl.setToolTipText("");
 
-        inventoryTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Cateogry", "Item Code", "Item Name", "Current Stock (g)", "Unit Price"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        inventoryTable.setRowHeight(24);
-        jScrollPane6.setViewportView(inventoryTable);
-        if (inventoryTable.getColumnModel().getColumnCount() > 0) {
-            inventoryTable.getColumnModel().getColumn(2).setResizable(false);
-        }
-
         addNewDeliveryNoteBtn.setText("Add New Delivery Note");
         addNewDeliveryNoteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,6 +150,33 @@ public class AdminPannel extends javax.swing.JFrame {
             }
         });
 
+        jScrollPane6.setBorder(null);
+
+        inventoryTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Item Code", "Item Name", "Cateogry", "Current Stock (g)", "Unit Price"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        inventoryTable.setRowHeight(24);
+        jScrollPane6.setViewportView(inventoryTable);
+        if (inventoryTable.getColumnModel().getColumnCount() > 0) {
+            inventoryTable.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        jTabbedPane1.addTab("Current Stocks", jScrollPane6);
+        jTabbedPane1.addTab("Delivery Notes", jScrollPane2);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -177,10 +184,10 @@ public class AdminPannel extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 825, Short.MAX_VALUE)
+                    .addComponent(jTabbedPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(logoLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(greetingsLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -216,8 +223,8 @@ public class AdminPannel extends javax.swing.JFrame {
                     .addComponent(HeaderLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addNewDeliveryNoteBtn)
                     .addComponent(addNewStocksBtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
+                .addGap(10, 10, 10)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -229,7 +236,8 @@ public class AdminPannel extends javax.swing.JFrame {
     }//GEN-LAST:event_addNewDeliveryNoteBtnActionPerformed
 
     private void addNewStocksBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNewStocksBtnActionPerformed
-        // TODO add your handling code here:
+        AddNewStocksFrame frame = new AddNewStocksFrame();
+        frame.setVisible(true);
     }//GEN-LAST:event_addNewStocksBtnActionPerformed
 
     /**
@@ -273,7 +281,9 @@ public class AdminPannel extends javax.swing.JFrame {
     private javax.swing.JButton addNewStocksBtn;
     private javax.swing.JLabel greetingsLbl;
     private javax.swing.JTable inventoryTable;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel logoLabel;
     private javax.swing.JButton logoutBtn;
     private javax.swing.JButton profileBtn;
