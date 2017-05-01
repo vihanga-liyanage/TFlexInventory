@@ -18,7 +18,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import classes.User;
 import javax.swing.ImageIcon;
 import static main.Run.loginFrame;
-
+import static classes.User.LoggedUserID;
 
 public class LoginFrame extends javax.swing.JFrame {
 
@@ -153,7 +153,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
 
-        userName = txtUsername.getText();
+        userName = "dush";//txtUsername.getText();
         password = txtPassword.getText();
         String encriptedPass = PswrdEncrypt.main2(password);
         
@@ -164,6 +164,9 @@ public class LoginFrame extends javax.swing.JFrame {
         if (loginResponse == 1) {
             user = userName;
             loginFrame.user = userName;
+            
+            //store user name in a static variable for future use
+            LoggedUserID = us.getUserID(userName);
             
             AdminPannel adminPannel = new AdminPannel();//the provided username & password matched
                       

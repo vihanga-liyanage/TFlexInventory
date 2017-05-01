@@ -8,6 +8,8 @@ package main;
 
 import classes.Item;
 import classes.ResultArray;
+import classes.Transaction;
+import classes.TransactionItem;
 import classes.Validation;
 import java.awt.Font;
 import java.awt.event.KeyAdapter;
@@ -37,6 +39,7 @@ import static main.AdminPannel.setUIFont;
 public class AddNewStocksFrame extends javax.swing.JFrame {
 
     Item item = new Item();
+    AdminPannel adminPannel;
     /**
      * Creates new form AddNewStocksFrame
      */
@@ -56,7 +59,8 @@ public class AddNewStocksFrame extends javax.swing.JFrame {
         //for windows - com.sun.java.swing.plaf.windows.WindowsLookAndFeel
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | 
+                UnsupportedLookAndFeelException ex) {
             Logger.getLogger(AdminPannel.class.getName()).log(Level.SEVERE, null, ex);
         }
         
@@ -86,10 +90,12 @@ public class AddNewStocksFrame extends javax.swing.JFrame {
                 String stock = itemStockQtyTxt.getText();
                 if (stock.length() > 0) {
                     if (!(new Validation().isInt(stock))) {
-                        JOptionPane.showMessageDialog(itemStockQtyTxt, "New stock quantity must be a valid number.", "Invalid Item Stock Quantity", 2);
+                        JOptionPane.showMessageDialog(itemStockQtyTxt, "New stock quantity must be a valid number.", 
+                                "Invalid Item Stock Quantity", 2);
                         itemStockQtyTxt.setText(stock.substring(0, stock.length() - 1));
                     } else if (Integer.parseInt(stock) < 0) {
-                        JOptionPane.showMessageDialog(itemStockQtyTxt, "New stock quantity cannot be less than 0.", "Invalid Item Stock Quantity", 2);
+                        JOptionPane.showMessageDialog(itemStockQtyTxt, "New stock quantity cannot be less than 0.", 
+                                "Invalid Item Stock Quantity", 2);
                         itemStockQtyTxt.setText(stock.substring(0, stock.length() - 1));
                     }
                 }
@@ -117,7 +123,8 @@ public class AddNewStocksFrame extends javax.swing.JFrame {
             @Override
             public void windowClosing(WindowEvent e) {
                 int confirmed = JOptionPane.showConfirmDialog(null, 
-                    "Are you sure you want to close this window?\nAll data you entered will be lost.", "Confirm window close",
+                    "Are you sure you want to close this window?\nAll data you entered will be lost.", 
+                    "Confirm window close",
                     JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
                 if (confirmed == JOptionPane.YES_OPTION) {
                     close();
@@ -320,6 +327,11 @@ public class AddNewStocksFrame extends javax.swing.JFrame {
         jScrollPane6.setViewportView(inventoryTable);
 
         confirmBtn.setText("Confirm");
+        confirmBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmBtnActionPerformed(evt);
+            }
+        });
 
         deleteBtn.setText("Delete");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -410,10 +422,12 @@ public class AddNewStocksFrame extends javax.swing.JFrame {
             itemsCombo.requestFocus();
             itemsCombo.setSelectedIndex(-1);
         } else if (itemStockQtyTxt.getText().equals("")) {
-            JOptionPane.showMessageDialog(itemStockQtyTxt, "Please enter item stock quantity to add.", "Empty Item Stock Quantity", 2);
+            JOptionPane.showMessageDialog(itemStockQtyTxt, "Please enter item stock quantity to add.", 
+                    "Empty Item Stock Quantity", 2);
             itemStockQtyTxt.requestFocus();
         } else if (parseInt(itemStockQtyTxt.getText()) <= 0) {
-            JOptionPane.showMessageDialog(itemStockQtyTxt, "item stock quantity is zero.", "Invalid item stock Quantity", 2);
+            JOptionPane.showMessageDialog(itemStockQtyTxt, "Item stock quantity cannot be 0!", 
+                    "Invalid item stock Quantity", 2);
             itemStockQtyTxt.requestFocus();
 
             //If all are good...
@@ -459,7 +473,7 @@ public class AddNewStocksFrame extends javax.swing.JFrame {
                 newRow.addElement(itemRecord.getString(1));
                 newRow.addElement(formatNum(itemRecord.getString(2)));
                 newRow.addElement(itemStockQty);
-                newRow.addElement(itemStockQty + parseInt(itemRecord.getString(2)));
+                newRow.addElement(itemStockQty + parseFloat(itemRecord.getString(2)));
                 DefaultTableModel model = (DefaultTableModel) inventoryTable.getModel();
                 model.addRow(newRow);
             }
@@ -472,13 +486,46 @@ public class AddNewStocksFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_itemAddBtnActionPerformed
 
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
-        int dialogResult = JOptionPane.showConfirmDialog(inventoryTable, "Please confirm record deletion", "Confirm Deletion", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int dialogResult = JOptionPane.showConfirmDialog(inventoryTable, 
+                "Please confirm record deletion", "Confirm Deletion", 
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (dialogResult == JOptionPane.YES_OPTION){
             DefaultTableModel model = (DefaultTableModel)inventoryTable.getModel();
             model.removeRow(inventoryTable.getSelectedRow());
             deleteBtn.setEnabled(false);
         }
     }//GEN-LAST:event_deleteBtnActionPerformed
+
+    private void confirmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmBtnActionPerformed
+        int dialogResult = JOptionPane.showConfirmDialog(inventoryTable, 
+                "Please confirm new stocks.", 
+                "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (dialogResult == JOptionPane.YES_OPTION){
+            //Add transaction record
+            Transaction t = new Transaction();
+            t.addNewTransaction();
+            
+            //get transaction id
+            int tid = t.getLastTransactionID();
+            if (tid == -1)
+                tid = 1;
+            
+            TransactionItem ti = new TransactionItem();
+            
+            int rowCount = inventoryTable.getRowCount();
+            for (int i = 0; i < rowCount; i++) {
+                //update inventory
+                item.updateItemStock(inventoryTable.getValueAt(i, 0).toString(), inventoryTable.getValueAt(i, 5).toString());
+                
+                //Add transactionitem record
+                ti.addNewTransaction(tid, inventoryTable.getValueAt(i, 0).toString(), 0, inventoryTable.getValueAt(i, 4).toString());
+            }
+            
+            //re-populate InventoryTable in admin pannel
+            adminPannel.populateInventoryTable();
+            this.close();
+        }
+    }//GEN-LAST:event_confirmBtnActionPerformed
 
     /**
      * @param args the command line arguments

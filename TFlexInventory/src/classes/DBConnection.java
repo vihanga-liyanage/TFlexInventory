@@ -130,6 +130,7 @@ public class DBConnection {
                 return 2;
             }
             logger.log(Level.WARNING, e.getMessage());
+            e.printStackTrace();
             JOptionPane.showMessageDialog(null, "There were some issues with the database. Please contact developers.\n\nError code : DBConnection 89", "Error", 0);
             System.exit(0);
             return 0;

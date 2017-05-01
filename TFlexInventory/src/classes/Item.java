@@ -38,4 +38,10 @@ public class Item {
         String query = "SELECT i.code, c.cname, i.currentstock FROM item i, category c WHERE i.itemname = '" + itemName + "' AND  i.category = c.cid";
         return dbConn.getResultArray(query);
     }
+    
+    public int updateItemStock(String code, String newStock) {
+        String query = "UPDATE item SET currentstock = '" + newStock + "' WHERE code = '" + code + "' ";
+        int ret = dbConn.updateResult(query);
+        return ret;
+    }
 }

@@ -59,7 +59,7 @@ public class AdminPannel extends javax.swing.JFrame {
         startClock();
         
         //Populate main inventory table
-        item.viewAllItems((DefaultTableModel) inventoryTable.getModel());
+        populateInventoryTable();
         
         //enabling sorting for tables
         inventoryTable.setAutoCreateRowSorter(true);
@@ -68,6 +68,11 @@ public class AdminPannel extends javax.swing.JFrame {
 
     public void setGreetings(String greeting) {
         greetingsLbl.setText("Welcome Mr. Dushyantha");
+    }
+    
+    //Seperated method to call from outside the constructor
+    public void populateInventoryTable() {
+        item.viewAllItems((DefaultTableModel) inventoryTable.getModel());
     }
     
     //Setting default font
@@ -237,6 +242,7 @@ public class AdminPannel extends javax.swing.JFrame {
 
     private void addNewStocksBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNewStocksBtnActionPerformed
         AddNewStocksFrame frame = new AddNewStocksFrame();
+        frame.adminPannel = this;
         frame.setVisible(true);
     }//GEN-LAST:event_addNewStocksBtnActionPerformed
 

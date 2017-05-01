@@ -27,8 +27,8 @@ CREATE TABLE "item" (
 
 DROP TABLE IF EXISTS "transaction";
 CREATE TABLE "transaction" (
-	"tid" INTEGER PRIMARY KEY NOT NULL UNIQUE, 
-	"date" DATETIME NOT NULL, 
+	"tid" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, 
+	"date" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, 
 	"user" INTEGER NOT NULL REFERENCES `user` (`uid`) ON DELETE RESTRICT ON UPDATE RESTRICT 
 	);
 
@@ -99,9 +99,9 @@ INSERT INTO "item" VALUES(103,'Red Pepper corns',3,0,0);
 INSERT INTO "item" VALUES(105,'Chai Liquid Flavour',2,00,0);
 INSERT INTO "item" VALUES(108,'vdxbgfbgxd',3,0,0);
 INSERT INTO "item" VALUES(109,'Soursop Cut ',3,0,0);
-INSERT INTO "item" VALUES(1,'Aloe Vera C/cut',3,0,0);
-INSERT INTO "item" VALUES(2,'Cardamom C/C',3,0,0);
-INSERT INTO "item" VALUES(3,'Cardamom Pods',3,0,0);
+INSERT INTO "item" VALUES(1,'Aloe Vera C/cut',3,50,0);
+INSERT INTO "item" VALUES(2,'Cardamom C/C',3,10,0);
+INSERT INTO "item" VALUES(3,'Cardamom Pods',3,20,0);
 INSERT INTO "item" VALUES(4,'Chai F/C',3,0,0);
 INSERT INTO "item" VALUES(5,'Chai C/C',3,0,0);
 INSERT INTO "item" VALUES(6,'Cinnamon C/C',3,0,0);
