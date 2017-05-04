@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-package main;
+package main.java.frames;
 
-import classes.Item;
+import main.java.classes.Item;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -125,7 +125,7 @@ public class AdminPannel extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        logoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo-new (Custom).png"))); // NOI18N
+        logoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/img/logo-new (Custom)-old.png"))); // NOI18N
 
         profileBtn.setText("Profile");
 
@@ -192,7 +192,7 @@ public class AdminPannel extends javax.swing.JFrame {
                     .addComponent(jTabbedPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(logoLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(greetingsLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -237,7 +237,9 @@ public class AdminPannel extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addNewDeliveryNoteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNewDeliveryNoteBtnActionPerformed
-        // TODO add your handling code here:
+        AddNewDeliveryNoteFrame frame = new AddNewDeliveryNoteFrame();
+        frame.adminPannel = this;
+        frame.setVisible(true);
     }//GEN-LAST:event_addNewDeliveryNoteBtnActionPerformed
 
     private void addNewStocksBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNewStocksBtnActionPerformed

@@ -1,4 +1,4 @@
-package classes;
+package main.java.classes;
 
 import java.awt.EventQueue;
 import java.awt.event.ItemEvent;

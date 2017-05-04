@@ -1,5 +1,5 @@
 
-package classes;
+package main.java.classes;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;

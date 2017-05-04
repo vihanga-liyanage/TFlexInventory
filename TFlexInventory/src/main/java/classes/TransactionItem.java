@@ -1,4 +1,4 @@
-package classes;
+package main.java.classes;
 
 /**
  *
@@ -9,7 +9,7 @@ public class TransactionItem {
     DBConnection dbConn = DBConnection.getInstance();
     
     //Add new transactionitem
-    public int addNewTransaction(int tid, String code, int isout, String qty) {
+    public int addNewTransactionItem(int tid, String code, int isout, String qty) {
         String query = "INSERT INTO 'transactionitem' VALUES ('" + tid + "', '" + code + "', '" + isout + "', '" + qty + "') ";
         return dbConn.updateResult(query);
     }

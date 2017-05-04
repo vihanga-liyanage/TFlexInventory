@@ -29,7 +29,7 @@
                   <Component id="jTabbedPane1" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="logoLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="178" max="32767" attributes="0"/>
+                      <EmptySpace pref="9" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="greetingsLbl" min="-2" pref="320" max="-2" attributes="0"/>
@@ -88,7 +88,7 @@
     <Component class="javax.swing.JLabel" name="logoLabel">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/img/logo-new (Custom).png"/>
+          <Image iconType="3" name="/main/resources/img/logo-new (Custom)-old.png"/>
         </Property>
       </Properties>
     </Component>

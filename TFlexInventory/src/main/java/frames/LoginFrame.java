@@ -1,10 +1,9 @@
 
-package main;
+package main.java.frames;
 
-import classes.DBConnection;
-import static classes.DBConnection.logger;
-import classes.PswrdEncrypt;
-import classes.ResultArray;
+import main.java.classes.DBConnection;
+import static main.java.classes.DBConnection.logger;
+import main.java.classes.PswrdEncrypt;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -15,10 +14,10 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import classes.User;
+import main.java.classes.User;
 import javax.swing.ImageIcon;
-import static main.Run.loginFrame;
-import static classes.User.LoggedUserID;
+import static main.java.frames.Run.loginFrame;
+import static main.java.classes.User.LoggedUserID;
 
 public class LoginFrame extends javax.swing.JFrame {
 
@@ -31,7 +30,7 @@ public class LoginFrame extends javax.swing.JFrame {
     public LoginFrame() {
 
         //Setting icon
-        ImageIcon img = new ImageIcon("src\\img\\icon-1.png");
+        ImageIcon img = new ImageIcon("src\\main\\resorces\\img\\icon-1.png");
         this.setIconImage(img.getImage());
         
         //Add windows look and feel
@@ -139,7 +138,7 @@ public class LoginFrame extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(220, 110, 290, 160);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/login background.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/img/login background.jpg"))); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(0, 0, 740, 400);
 

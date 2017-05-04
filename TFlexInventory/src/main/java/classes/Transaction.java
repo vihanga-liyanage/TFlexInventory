@@ -1,6 +1,6 @@
-package classes;
+package main.java.classes;
 
-import static classes.User.LoggedUserID;
+import static main.java.classes.User.LoggedUserID;
 
 /**
  *
@@ -13,7 +13,6 @@ public class Transaction {
     //Add new transaction
     public int addNewTransaction() {
         String query = "INSERT INTO 'transaction' ('user') VALUES ('" + LoggedUserID + "') ";
-        System.out.println(query);
         return dbConn.updateResult(query);
     }
     

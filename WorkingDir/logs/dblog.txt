@@ -194,3 +194,137 @@ May 02, 2017 1:17:06 AM classes.DBConnection <init>
 INFO: ======================== Application started ========================
 May 02, 2017 1:17:11 AM main.LoginFrame btnSubmitActionPerformed
 INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:02:39 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 6:03:34 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 6:05:01 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 6:05:44 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 6:07:11 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 6:08:15 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 6:08:17 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:13:39 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 6:13:43 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:13:43 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:13:43 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:13:43 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:13:44 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:13:44 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:13:44 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:13:44 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:13:44 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:13:44 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:13:44 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:13:56 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 6:14:00 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:14:26 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 6:14:31 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:27:49 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 6:27:57 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:29:38 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 6:29:42 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:30:35 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 6:30:38 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:33:05 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 6:33:09 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 6:33:47 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 6:33:50 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 7:25:16 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 7:25:19 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 7:26:34 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 7:26:36 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 7:27:36 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 7:27:40 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 7:29:04 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 7:29:06 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 7:29:56 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 7:29:59 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 7:33:34 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 7:33:36 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 7:37:12 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 7:37:15 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 7:39:23 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 7:39:25 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 7:41:44 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 7:41:46 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 7:42:29 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 7:42:32 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 7:49:03 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 7:49:06 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 7:49:51 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 7:49:54 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 7:51:08 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 7:51:10 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 7:51:48 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 7:51:50 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 7:52:29 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 7:52:31 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 02, 2017 8:20:15 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 02, 2017 8:20:36 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.
+May 04, 2017 2:20:32 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 04, 2017 2:20:40 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.

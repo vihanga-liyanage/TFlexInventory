@@ -1,4 +1,4 @@
-package classes;
+package main.java.classes;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -162,7 +162,7 @@ public class DBConnection {
 	InputStream input = null;
 
 	try {
-            input = new FileInputStream("src\\resources\\config.properties");
+            input = new FileInputStream("src\\main\\resources\\config.properties");
             prop.load(input);
 
             TFlexFolderPath = prop.getProperty("TFlexFolderPath");
