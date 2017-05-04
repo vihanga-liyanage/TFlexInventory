@@ -1,4 +1,3 @@
-
 package main.java.frames;
 
 import main.java.classes.DBConnection;
@@ -19,6 +18,10 @@ import javax.swing.ImageIcon;
 import static main.java.frames.Run.loginFrame;
 import static main.java.classes.User.LoggedUserID;
 
+/**
+ *
+ * @author Vihanga Liyanage
+ */
 public class LoginFrame extends javax.swing.JFrame {
 
     public String user;

@@ -17,6 +17,10 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 import javax.swing.JOptionPane;
 
+/**
+ *
+ * @author Vihanga Liyanage
+ */
 public class DBConnection {
 
     private static DBConnection dbconn = null;

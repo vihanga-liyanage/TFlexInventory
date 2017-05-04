@@ -1,7 +1,5 @@
-
 package main.java.classes;
 
-import main.java.classes.AutoSuggest;
 import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 

@@ -11,8 +11,8 @@ public class Transaction {
     DBConnection dbConn = DBConnection.getInstance();
     
     //Add new transaction
-    public int addNewTransaction() {
-        String query = "INSERT INTO 'transaction' ('user') VALUES ('" + LoggedUserID + "') ";
+    public int addNewTransaction(int isout) {
+        String query = "INSERT INTO 'transaction' ('isout', 'user') VALUES ('" + isout + "', '" + LoggedUserID + "') ";
         return dbConn.updateResult(query);
     }
     

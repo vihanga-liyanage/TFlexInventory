@@ -1,5 +1,9 @@
 package main.java.classes;
 
+/**
+ *
+ * @author Vihanga Liyanage
+ */
 public class Validation {
     
     public boolean isInt(String str){

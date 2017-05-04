@@ -1,6 +1,9 @@
-
 package main.java.classes;
 
+/**
+ *
+ * @author Vihanga Liyanage
+ */
 public class PswrdEncrypt {
 
     public static String main2(String inputPswrd) {

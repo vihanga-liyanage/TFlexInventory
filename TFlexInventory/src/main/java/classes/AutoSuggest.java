@@ -14,6 +14,10 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
+/**
+ *
+ * @author Vihanga Liyanage
+ */
 public class AutoSuggest {
 
     Vector<String> v = new Stack<String>();

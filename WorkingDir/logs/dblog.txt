@@ -328,3 +328,7 @@ May 04, 2017 2:20:32 PM main.java.classes.DBConnection <init>
 INFO: ======================== Application started ========================
 May 04, 2017 2:20:40 PM main.java.frames.LoginFrame btnSubmitActionPerformed
 INFO: Dushyantha logged in as an admin.
+May 04, 2017 2:35:35 PM main.java.classes.DBConnection <init>
+INFO: ======================== Application started ========================
+May 04, 2017 2:35:39 PM main.java.frames.LoginFrame btnSubmitActionPerformed
+INFO: Dushyantha logged in as an admin.

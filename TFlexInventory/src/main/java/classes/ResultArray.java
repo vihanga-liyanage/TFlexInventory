@@ -1,4 +1,3 @@
-
 package main.java.classes;
 
 import java.sql.ResultSet;

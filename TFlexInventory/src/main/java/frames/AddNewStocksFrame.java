@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package main.java.frames;
 
 import main.java.classes.Item;
@@ -524,7 +518,7 @@ public class AddNewStocksFrame extends javax.swing.JFrame {
         if (dialogResult == JOptionPane.YES_OPTION){
             //Add transaction record
             Transaction t = new Transaction();
-            t.addNewTransaction();
+            t.addNewTransaction(0);
             
             //get transaction id
             int tid = t.getLastTransactionID();
@@ -539,7 +533,7 @@ public class AddNewStocksFrame extends javax.swing.JFrame {
                 item.updateItemStock(inventoryTable.getValueAt(i, 0).toString(), inventoryTable.getValueAt(i, 5).toString());
                 
                 //Add transactionitem record
-                ti.addNewTransactionItem(tid, inventoryTable.getValueAt(i, 0).toString(), 0, inventoryTable.getValueAt(i, 4).toString());
+                ti.addNewTransactionItem(tid, inventoryTable.getValueAt(i, 0).toString(), inventoryTable.getValueAt(i, 4).toString());
             }
             
             //re-populate InventoryTable in admin pannel
