@@ -13,6 +13,7 @@ import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.table.DefaultTableModel;
+import main.java.classes.Transaction;
 
 /**
  *
@@ -21,6 +22,7 @@ import javax.swing.table.DefaultTableModel;
 public class AdminPannel extends javax.swing.JFrame {
 
     Item item = new Item();
+    Transaction transaction = new Transaction();
     
     /**
      * Creates new form AdminPannel
@@ -49,15 +51,23 @@ public class AdminPannel extends javax.swing.JFrame {
         
         //Changing table headers to bold
         inventoryTable.getTableHeader().setFont(new Font("Segoe UI Semibold", Font.PLAIN, 14));
+        newStockArrivalsTbl.getTableHeader().setFont(new Font("Segoe UI Semibold", Font.PLAIN, 14));
+        deliveryNotesTbl.getTableHeader().setFont(new Font("Segoe UI Semibold", Font.PLAIN, 14));
         
         startClock();
         
         //Populate main inventory table
         populateInventoryTable();
         
+        //Populate transaction tables
+        populateTransactionTables();
+        
         //enabling sorting for tables
         inventoryTable.setAutoCreateRowSorter(true);
       
+        //Keep the window fullscreen
+        this.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
+        
     }
 
     public void setGreetings(String greeting) {
@@ -66,7 +76,12 @@ public class AdminPannel extends javax.swing.JFrame {
     
     //Seperated method to call from outside the constructor
     public void populateInventoryTable() {
-        item.viewAllItems((DefaultTableModel) inventoryTable.getModel());
+        item.populateItemTable((DefaultTableModel) inventoryTable.getModel());
+    }
+    
+    public void populateTransactionTables() {
+        transaction.populateItemTable((DefaultTableModel) newStockArrivalsTbl.getModel(), 
+                (DefaultTableModel) deliveryNotesTbl.getModel());
     }
     
     //Setting default font
@@ -115,7 +130,16 @@ public class AdminPannel extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jScrollPane6 = new javax.swing.JScrollPane();
         inventoryTable = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        newStockArrivalsPanel = new javax.swing.JScrollPane();
+        newStockArrivalsTbl = new javax.swing.JTable();
+        deliveryNotesPanel = new javax.swing.JScrollPane();
+        deliveryNotesTbl = new javax.swing.JTable();
+        transactionDetailsPanel = new javax.swing.JScrollPane();
+        transactionsDetailsTbl = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -174,7 +198,121 @@ public class AdminPannel extends javax.swing.JFrame {
         }
 
         jTabbedPane1.addTab("Current Stocks", jScrollPane6);
-        jTabbedPane1.addTab("Delivery Notes", jScrollPane2);
+
+        newStockArrivalsPanel.setPreferredSize(new java.awt.Dimension(500, 402));
+
+        newStockArrivalsTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Date", "User"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        newStockArrivalsTbl.setRowHeight(24);
+        newStockArrivalsPanel.setViewportView(newStockArrivalsTbl);
+        if (newStockArrivalsTbl.getColumnModel().getColumnCount() > 0) {
+            newStockArrivalsTbl.getColumnModel().getColumn(0).setPreferredWidth(40);
+        }
+
+        deliveryNotesPanel.setPreferredSize(new java.awt.Dimension(500, 402));
+
+        deliveryNotesTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Date", "User"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        deliveryNotesTbl.setRowHeight(24);
+        deliveryNotesPanel.setViewportView(deliveryNotesTbl);
+        if (deliveryNotesTbl.getColumnModel().getColumnCount() > 0) {
+            deliveryNotesTbl.getColumnModel().getColumn(0).setPreferredWidth(40);
+        }
+
+        transactionsDetailsTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Item Code", "Item Name", "Quantity"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        transactionsDetailsTbl.setRowHeight(24);
+        transactionDetailsPanel.setViewportView(transactionsDetailsTbl);
+        if (transactionsDetailsTbl.getColumnModel().getColumnCount() > 0) {
+            transactionsDetailsTbl.getColumnModel().getColumn(0).setPreferredWidth(40);
+        }
+
+        jLabel1.setText("New Stock Arrivals");
+
+        jLabel2.setText("Delivery Notes");
+
+        jLabel3.setText("Transactions Details");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1)
+                    .addComponent(newStockArrivalsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
+                    .addComponent(deliveryNotesPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(transactionDetailsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(newStockArrivalsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(deliveryNotesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(transactionDetailsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Transactions", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -186,7 +324,7 @@ public class AdminPannel extends javax.swing.JFrame {
                     .addComponent(jTabbedPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(logoLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(greetingsLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -223,7 +361,7 @@ public class AdminPannel extends javax.swing.JFrame {
                     .addComponent(addNewDeliveryNoteBtn)
                     .addComponent(addNewStocksBtn))
                 .addGap(10, 10, 10)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
 
@@ -281,14 +419,23 @@ public class AdminPannel extends javax.swing.JFrame {
     private javax.swing.JLabel HeaderLbl;
     private javax.swing.JButton addNewDeliveryNoteBtn;
     private javax.swing.JButton addNewStocksBtn;
+    private javax.swing.JScrollPane deliveryNotesPanel;
+    private javax.swing.JTable deliveryNotesTbl;
     private javax.swing.JLabel greetingsLbl;
     private javax.swing.JTable inventoryTable;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel logoLabel;
     private javax.swing.JButton logoutBtn;
+    private javax.swing.JScrollPane newStockArrivalsPanel;
+    private javax.swing.JTable newStockArrivalsTbl;
     private javax.swing.JButton profileBtn;
     private javax.swing.JLabel timeLabel;
+    private javax.swing.JScrollPane transactionDetailsPanel;
+    private javax.swing.JTable transactionsDetailsTbl;
     // End of variables declaration//GEN-END:variables
 }

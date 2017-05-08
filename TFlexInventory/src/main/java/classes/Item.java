@@ -11,8 +11,8 @@ public class Item {
     
     DBConnection dbConn = DBConnection.getInstance();
     
-    //returns data for main inventory table
-    public void viewAllItems(DefaultTableModel model) {
+    //returns a table model with data for main inventory table
+    public void populateItemTable(DefaultTableModel model) {
         ResultArray res = null;
         String query = "SELECT code, itemname, cname, currentstock, price FROM category, item where item.category = category.cid";
         res = dbConn.getResultArray(query);
