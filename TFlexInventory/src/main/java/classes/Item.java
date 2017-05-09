@@ -43,4 +43,16 @@ public class Item {
         int ret = dbConn.updateResult(query);
         return ret;
     }
+    
+    //returns data for edit items table
+    public void populateEditItemTable(DefaultTableModel model) {
+        ResultArray res = null;
+        String query = "SELECT code, itemname, cname, price FROM category, item where item.category = category.cid";
+        res = dbConn.getResultArray(query);
+        model.setRowCount(0);
+        while (res.next()) {
+            //DefaultTableModel model = (DefaultTableModel) adminPannel.settingsIngredientTable.getModel();
+            model.addRow(new Object[]{res.getString(0), res.getString(1), res.getString(2), res.getString(3)});
+        }
+    }
 }
